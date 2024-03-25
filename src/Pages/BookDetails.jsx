@@ -10,43 +10,40 @@ const BookDetails = () => {
 
 
     return (
-//         <div className="hero min-h-screen bg-base-200 gap-10">
-//   <div className="hero-content flex-col lg:flex-row">
-//     <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
-//     <div>
-//       <h1 className="text-5xl font-bold">{bookName}</h1>
-//       <p className="text-base font-medium mt-4 border-b-2 border-dashed py-4">By : {author}</p>
-//       <p className="text-base font-medium mb-4 border-b-2 border-dashed py-4">{category}</p>
-//       <p className="text-sm mb-4"><span className="font-bold text-sm">Review :</span> {review}</p>
-//       <div className="flex gap-8 font-medium text-[#23BE0A] items-center text-sm border-b-2 border-dashed py-4">
-//                     <p className=" font-bold text-black">Tag</p>
-//                     <p className="bg-[#23BE0A0D] p-1 rounded-xl border border-[#23BE0A0D] text-center ">#{tags[0]}</p>
-//                     <p className="bg-[#23BE0A0D] p-1 rounded-xl border text-center border-[#23BE0A0D]">#{tags[1]}</p>
-//                 </div>
-//         <div className="flex items center gap-20">
-//             <div className="text-sm">
-//             <p className="mt-4 mb-2">Number of Pages:</p>
-//             <p className="mb-2">Publisher:</p>
-//             <p className="mb-2">Year of Publishing:</p>
-//             <p className="mb-2">Rating:</p>
-//             </div>
-//             <div className="text-sm font-bold">
-//                 <p className="mt-4 mb-2">{totalPages}</p>
-//                 <p className="mb-2">{publisher}</p>
-//                 <p className="mb-2">{yearOfPublishing}</p>
-//                 <p className="mb-2">{rating}</p>
-//             </div>
-//         </div>
-//         <div className="flex gap-4 mt-4">
-//         <Link className="btn border-slate-600 font-semibold text-lg px-6">Read</Link>
-//         <Link className="btn text-white font-semibold text-lg bg-[#23BE0A]">Wishlist</Link>
-//         </div>
+        <div className="hero min-h-screen bg-base-200 gap-10">
+  <div className="hero-content flex-col lg:flex-row">
+    <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 className="text-5xl font-bold">{bookName}</h1>
+      <p className="text-base font-medium mt-4 border-b-2 border-dashed py-4">By : {author}</p>
+      <p className="text-base font-medium mb-4 border-b-2 border-dashed py-4">{category}</p>
+      <p className="text-sm mb-4"><span className="font-bold text-sm">Review :</span> {review}</p>
+      <div className="flex gap-8 font-medium text-[#23BE0A] items-center text-sm border-b-2 border-dashed py-4">
+                    <p className=" font-bold text-black">Tag</p>
+                    <p className="bg-[#23BE0A0D] p-1 rounded-xl border border-[#23BE0A0D] text-center ">#{tags[0]}</p>
+                    <p className="bg-[#23BE0A0D] p-1 rounded-xl border text-center border-[#23BE0A0D]">#{tags[1]}</p>
+                </div>
+        <div className="flex items center gap-20">
+            <div className="text-sm">
+            <p className="mt-4 mb-2">Number of Pages:</p>
+            <p className="mb-2">Publisher:</p>
+            <p className="mb-2">Year of Publishing:</p>
+            <p className="mb-2">Rating:</p>
+            </div>
+            <div className="text-sm font-bold">
+                <p className="mt-4 mb-2">{totalPages}</p>
+                <p className="mb-2">{publisher}</p>
+                <p className="mb-2">{yearOfPublishing}</p>
+                <p className="mb-2">{rating}</p>
+            </div>
+        </div>
+        <div className="flex gap-4 mt-4">
+        <Link className="btn border-slate-600 font-semibold text-lg px-6">Read</Link>
+        <Link className="btn text-white font-semibold text-lg bg-[#23BE0A]">Wishlist</Link>
+        </div>
 
-//     </div>
-//   </div>
-// </div>
-<div>
-
+    </div>
+  </div>
 </div>
     );
 };
