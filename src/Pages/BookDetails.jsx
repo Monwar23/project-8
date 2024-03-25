@@ -1,5 +1,6 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
-
+import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BookDetails = () => {
     const books=useLoaderData()
@@ -8,9 +9,14 @@ const BookDetails = () => {
     const book=books.find(book=>book.bookId===idInt)
     const {bookName,author,image,review,totalPages,rating,category,tags,publisher,yearOfPublishing}=book
 
+    const handleRead=()=>{
+        // saveJobApplication(idInt)
+        toast('You have apply successfully applied')
+    }
 
     return (
-        <div className="hero min-h-screen bg-base-200 gap-10">
+    <div>
+            <div className="hero min-h-screen bg-base-200 gap-10">
   <div className="hero-content flex-col lg:flex-row">
     <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
     <div>
@@ -38,13 +44,15 @@ const BookDetails = () => {
             </div>
         </div>
         <div className="flex gap-4 mt-4">
-        <Link className="btn border-slate-600 font-semibold text-lg px-6">Read</Link>
-        <Link className="btn text-white font-semibold text-lg bg-[#23BE0A]">Wishlist</Link>
+        <button onClick={handleRead} className="btn border-slate-600 font-semibold text-lg px-6">Read</button>
+        <button className="btn text-white font-semibold text-lg bg-[#23BE0A]">Wishlist</button>
         </div>
 
     </div>
   </div>
 </div>
+<ToastContainer></ToastContainer>
+    </div>
     );
 };
 
