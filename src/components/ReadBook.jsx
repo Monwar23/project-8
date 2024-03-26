@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const ReadBook = ({ book }) => {
-    const { image, bookName, tags, author, category, rating,yearOfPublishing,publisher,totalPages } = book
+    const {image, bookName, tags, author, category, rating,yearOfPublishing,publisher,totalPages } = book
     return (
         <div className="hero bg-base-200 border border-slate-300 mt-10">
             <div className="hero-content flex-col lg:flex-row gap-7">

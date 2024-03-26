@@ -12,9 +12,9 @@ const BookDetails = () => {
     const handleRead=()=>{
         const isRead = saveBooks(idInt, 'read'); // Save book as read
         if (isRead) {
-            toast.success('Book read Successfully!');
+            toast.success('Book Added to read Successfully!');
         } else {
-            toast.error('Already Read');
+            toast.error('Already Added to Read');
         }
     }
     const handleWishlist = () => {
@@ -22,7 +22,7 @@ const BookDetails = () => {
         if (isWishlist) {
             toast.success('Book added to Wishlist!');
         } else {
-            toast.error('Already added to Wishlist or Read');
+            toast.error('Already added to Wishlist');
         }
     }
 
