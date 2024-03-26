@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBooks,getBooks } from "../utiles";
+import { saveBooks } from "../utiles";
 import toast from "react-hot-toast";
 
 const BookDetails = () => {
@@ -8,9 +8,8 @@ const BookDetails = () => {
     const idInt=parseInt(bookId)
     const book=books.find(book=>book.bookId===idInt)
     const {bookName,author,image,review,totalPages,rating,category,tags,publisher,yearOfPublishing}=book
-
     const handleRead=()=>{
-        const isRead = saveBooks(idInt, 'read'); // Save book as read
+        const isRead = saveBooks(idInt, 'read'); 
         if (isRead) {
             toast.success('Book Added to read Successfully!');
         } else {
@@ -18,9 +17,9 @@ const BookDetails = () => {
         }
     }
     const handleWishlist = () => {
-        const isWishlist = saveBooks(idInt, 'wishlist'); // Save book to wishlist
+        const isWishlist = saveBooks(idInt, 'wishlist'); 
         if (isWishlist) {
-            toast.success('Book added to Wishlist!');
+            toast.success('Book added to Wishlist');
         } else {
             toast.error('Already added to Wishlist');
         }

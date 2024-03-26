@@ -15,13 +15,13 @@ export const saveBooks = (bookId, action) => {
     if (action === 'read' && !isExist) {
         books.push(bookId);
         localStorage.setItem('books', JSON.stringify(books));
-        return true; // Book marked as read successfully
+        return true; 
     } else if (action === 'wishlist' && !isExist) {
         books.push(bookId);
         localStorage.setItem('books', JSON.stringify(books));
-        return true; // Book added to wishlist successfully
+        return true; 
     } else {
-        return false; // Book already marked as read or added to wishlist
+        return false; 
     }
 };
 

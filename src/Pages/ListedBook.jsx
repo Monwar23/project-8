@@ -9,6 +9,9 @@ const ListedBook = () => {
     const [readBooks, setReadBooks] = useState([])
     const [tabIndex, setTabIndex] = useState(0)
 
+    const [sortBy, setSortBy] = useState(""); // State for sorting field
+    const [sortOrder, setSortOrder] = useState("");
+
     useEffect(() => {
         const storedBooks = getBooks()
         if (books.length > 0) {
@@ -19,9 +22,28 @@ const ListedBook = () => {
                     booksRead.push(book)
                 }
             }
-            setReadBooks(booksRead)
+            sortBooks(booksRead);
         }
-    }, [books]);
+    }, [books, sortBy]);
+
+    const sortBooks = (booksToSort) => {
+        const sortedBooks = [...booksToSort].sort((a, b) => {
+            if (sortBy === "rating") {
+                return b.rating - a.rating 
+            } else if (sortBy === "totalPages") {
+                return b.totalPages - a.totalPages;
+            } else if (sortBy === "yearOfPublishing") {
+                return b.yearOfPublishing - a.yearOfPublishing;
+            }
+            return 0;
+        });
+        setReadBooks(sortedBooks);
+    };
+
+    const handleSortChange = (e) => {
+        const selectedSortBy = e.target.value;
+        setSortBy(selectedSortBy);
+    };
 
     return (
         <div>
@@ -29,11 +51,11 @@ const ListedBook = () => {
                 <p>Books</p>
             </div>
             <div className="flex justify-center">
-                <select className="select w-full max-w-xs bg-[#23BE0A] text-lg font-semibold text-white">
+                <select className="select w-full max-w-xs bg-[#23BE0A] text-lg font-semibold text-white" onChange={handleSortChange}>
                     <option disabled selected >Sort By</option>
-                    <option><a href=""></a>Rating</option>
-                    <option><a href="">Number of Pages</a></option>
-                    <option><a href="">Publisher year</a></option>
+                    <option value="rating">Rating</option>
+                    <option value="totalPages">Number of Pages</option>
+                    <option value="yearOfPublishing">Publisher year</option>
                 </select>
             </div>
             <div className="flex mt-10 items-center overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">
@@ -57,7 +79,6 @@ const ListedBook = () => {
                     readBooks.map(book => <ReadBook key={book.bookId} book={book}></ReadBook>)
                 }
             </div>
-            {/* <Outlet></Outlet> */}
         </div>
     );
 };
