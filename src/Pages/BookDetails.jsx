@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBooks } from "../utiles";
-
+import { saveBooks,getBooks } from "../utiles";
+import toast from "react-hot-toast";
 
 const BookDetails = () => {
     const books=useLoaderData()
@@ -10,7 +10,20 @@ const BookDetails = () => {
     const {bookName,author,image,review,totalPages,rating,category,tags,publisher,yearOfPublishing}=book
 
     const handleRead=()=>{
-        saveBooks(idInt)
+        const isRead = saveBooks(idInt, 'read'); // Save book as read
+        if (isRead) {
+            toast.success('Book read Successfully!');
+        } else {
+            toast.error('Already Read');
+        }
+    }
+    const handleWishlist = () => {
+        const isWishlist = saveBooks(idInt, 'wishlist'); // Save book to wishlist
+        if (isWishlist) {
+            toast.success('Book added to Wishlist!');
+        } else {
+            toast.error('Already added to Wishlist or Read');
+        }
     }
 
     return (
@@ -44,7 +57,7 @@ const BookDetails = () => {
         </div>
         <div className="flex gap-4 mt-4">
         <button onClick={handleRead} className="btn border-slate-600 font-semibold text-lg px-6">Read</button>
-        <button className="btn text-white font-semibold text-lg bg-[#23BE0A]">Wishlist</button>
+        <button onClick={handleWishlist} className="btn text-white font-semibold text-lg bg-[#23BE0A]">Wishlist</button>
         </div>
       
     </div>
