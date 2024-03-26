@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { saveBooks } from "../utiles";
+
 
 const BookDetails = () => {
     const books=useLoaderData()
@@ -10,8 +10,7 @@ const BookDetails = () => {
     const {bookName,author,image,review,totalPages,rating,category,tags,publisher,yearOfPublishing}=book
 
     const handleRead=()=>{
-        // saveJobApplication(idInt)
-        toast('You have apply successfully applied')
+        saveBooks(idInt)
     }
 
     return (
@@ -47,11 +46,11 @@ const BookDetails = () => {
         <button onClick={handleRead} className="btn border-slate-600 font-semibold text-lg px-6">Read</button>
         <button className="btn text-white font-semibold text-lg bg-[#23BE0A]">Wishlist</button>
         </div>
-
+      
     </div>
   </div>
 </div>
-<ToastContainer></ToastContainer>
+
     </div>
     );
 };
