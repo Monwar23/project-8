@@ -1,8 +1,13 @@
 # Book Vibe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Includes navigation links to essential sections of the website, such as "Home," "Listed Books," "Pages to Read," and "Pages to Wishlist."
+- The navbar provides a responsive design suitable for various screen sizes, including desktop and mobile devices.
+- Utilizes a dropdown menu for smaller screens (e.g., mobile) to accommodate navigation links effectively without cluttering the interface.
+- Users can view a list of books categorized into "Read Books" and "Wishlist Books."
+- The ability to sort books based on different criteria such as rating, number of pages, or year of publishing enhances user experience and makes it easier to find specific books.
+- Each book page provides comprehensive details about the selected book, including its title, author, category, review, total pages, rating, publisher, year of publishing, and tags.
+- Users have the functionality to mark books as read or add them to their wishlist directly from the book details page.
+- The "PageToRead" component utilizes a bar graph to present statistics related to books marked as read.

@@ -1,7 +1,5 @@
 import { Bar, BarChart, Cell, XAxis, YAxis,CartesianGrid} from "recharts";
 
-
-
 const BarGraph = ({books}) => {
 
     const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
