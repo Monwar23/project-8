@@ -22,7 +22,7 @@ const ReadBook = ({ book }) => {
                     <div className="">
                         <button className="btn rounded-3xl bg-[#328EFF26] mr-4 text-[#328EFF]">Category : {category}</button>
                         <button className="btn rounded-3xl mr-4 bg-[#FFAC3326] text-[#FFAC33]">Rating : {rating}</button>
-                     <Link to="">
+                     <Link to={`/book/${book.bookId}`}>
                      <button className="btn rounded-3xl px-5 bg-[#23BE0A] text-white">View Details</button></Link>
                     </div>
                 </div>

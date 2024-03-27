@@ -3,7 +3,7 @@
 const PageToRead = () => {
     return (
         <div>
-            <p>pages to read</p>
+            <h2>bar chart</h2>
         </div>
     );
 };
