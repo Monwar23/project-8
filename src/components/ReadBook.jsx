@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { CiLocationOn } from "react-icons/ci";
+import { IoMdPeople } from "react-icons/io";
+import { RiPagesLine } from "react-icons/ri";
 
 const ReadBook = ({ book }) => {
     const {image, bookName, tags, author, category, rating,yearOfPublishing,publisher,totalPages } = book
@@ -13,11 +16,11 @@ const ReadBook = ({ book }) => {
                         <p className="text-black">Tag</p>
                         <p className="bg-[#23BE0A0D] p-1 rounded-xl border border-[#23BE0A0D] text-center ">#{tags[0]}</p>
                         <p className="bg-[#23BE0A0D] p-1 rounded-xl border text-center border-[#23BE0A0D]">#{tags[1]}</p>
-                        <p className="text-black font-normal">Year of Publishing : {yearOfPublishing}</p>
+                        <p className="text-black font-normal flex items-center gap-2"><CiLocationOn></CiLocationOn>Year of Publishing : {yearOfPublishing}</p>
                     </div>
                     <div className="flex items-center gap-6 font-normal text-base mb-3 border-b-2 py-4">
-                        <p>Publisher : {publisher}</p>
-                        <p>Page : {totalPages}</p>
+                        <p className="flex items-center gap-2"><IoMdPeople></IoMdPeople>Publisher : {publisher}</p>
+                        <p className="flex items-center gap-2"><RiPagesLine></RiPagesLine>Pages : {totalPages}</p>
                     </div>
                     <div className="">
                         <button className="btn rounded-3xl bg-[#328EFF26] mr-4 text-[#328EFF]">Category : {category}</button>
