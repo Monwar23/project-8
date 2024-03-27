@@ -20,12 +20,12 @@ const ListedBook = () => {
             const booksRead = books.filter(book => storedReadBooks.includes(book.bookId));
             const booksWishlist = books.filter(book => storedWishlistBooks.includes(book.bookId));
 
-            sortBooks(booksRead);
-            setWishlistBooks(booksWishlist);
+            sortBooks(booksRead, setReadBooks);
+            sortBooks(booksWishlist, setWishlistBooks);
         }
     }, [books, sortBy]);
 
-    const sortBooks = (booksToSort) => {
+    const sortBooks = (booksToSort,setBooks) => {
         const sortedBooks = [...booksToSort].sort((a, b) => {
             if (sortBy === "rating") 
             {
@@ -42,8 +42,7 @@ const ListedBook = () => {
             }
             return 0;
         });
-        setReadBooks(sortedBooks);
-        setWishlistBooks(sortedBooks);
+        setBooks(sortedBooks);
     };
 
     const handleSortChange = (e) => {
@@ -66,14 +65,12 @@ const ListedBook = () => {
             </div>
             <div className="flex mt-10 items-center overflow-x-auto overflow-y-hidden sm:justify-start flex-nowrap dark:bg-gray-100 dark:text-gray-800">
                 <Link
-                //  to=''
                   onClick={() => setTabIndex(0)}
                     className={`flex cursor-pointer items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 0 ? 'border border-b-0' : 'border-b'
                         }  `}>
                     <span>Read Books</span>
                 </Link>
                 <Link 
-                // to='wishlistBooks'
                  onClick={() => setTabIndex(1)}
                     className={`flex cursor-pointer items-center flex-shrink-0 px-5 py-3 space-x-2 ${tabIndex === 1 ? 'border border-b-0' : 'border-b'
                         }  `}>
