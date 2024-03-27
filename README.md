@@ -3,7 +3,7 @@
 
 ## Features
 
-- Includes navigation links to essential sections of the website, such as "Home," "Listed Books," "Pages to Read," and "Pages to Wishlist."
+- Includes navigation links to essential sections of the website, such as "Home," "Listed Books," "Pages to Read," "Pages to Wishlist," and "About."
 - The navbar provides a responsive design suitable for various screen sizes, including desktop and mobile devices.
 - Utilizes a dropdown menu for smaller screens (e.g., mobile) to accommodate navigation links effectively without cluttering the interface.
 - Users can view a list of books categorized into "Read Books" and "Wishlist Books."
