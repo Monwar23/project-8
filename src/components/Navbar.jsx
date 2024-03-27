@@ -21,6 +21,9 @@ const Navbar = () => {
         <li><NavLink className={({ isActive }) =>
               isActive ? 'text-[#23BE0A] border border-[#23BE0A] font-semibold' : 'font-semibold'
             } to="/PagesToRead">Pages to Read</NavLink></li>
+            <li><NavLink className={({ isActive }) =>
+              isActive ? 'text-[#23BE0A] border border-[#23BE0A] font-semibold' : 'font-semibold'
+            } to="/PagesToWishlist">Pages to Wishlist</NavLink></li>
       </ul>
     </div>
     <Link to="/" className="btn btn-ghost text-3xl font-bold">Book Vibe</Link>
@@ -38,6 +41,9 @@ const Navbar = () => {
         <li><NavLink className={({ isActive }) =>
               isActive ? 'text-[#23BE0A] border border-[#23BE0A] font-semibold' : 'font-semibold'
             } to="/PagesToRead">Pages to Read</NavLink></li>
+            <li><NavLink className={({ isActive }) =>
+              isActive ? 'text-[#23BE0A] border border-[#23BE0A] font-semibold' : 'font-semibold'
+            } to="/PagesToWishlist">Pages to Wishlist</NavLink></li>
     </ul>
   </div>
   <div className="navbar-end gap-3">

@@ -12,9 +12,7 @@ import PageToRead from './Pages/PageToRead';
 import ErrorPage from './Pages/ErrorPage';
 import BookDetails from './Pages/BookDetails';
 import { Toaster } from 'react-hot-toast';
-// import ReadBook from './components/ReadBook';
-// import Wishlist from './components/Wishlist';
-// import 'react-toastify/dist/ReactToastify.css';
+import PageToWishlist from './Pages/PageToWishlist';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +38,11 @@ const router = createBrowserRouter([
       {
         path:"/PagesToRead",
         element:<PageToRead></PageToRead>,
+        loader:()=>fetch('/data.json')
+      },
+      {
+        path:"/PagesToWishlist",
+        element:<PageToWishlist></PageToWishlist>,
         loader:()=>fetch('/data.json')
       },
     ]
